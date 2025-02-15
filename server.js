@@ -27,15 +27,6 @@ app.get('/api/datas', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/dark_souls_weapons.json'));
 });
 
-// API endpoint pro příjem dat z formuláře
-app.post('/api/submit', (req, res) => {
-    const { name, email } = req.body;
-    console.log('Received data:', { name, email });
-    
-    // Můžeš data zpracovat nebo uložit do databáze
-    res.status(200).json({ message: 'Data received successfully', data: { name, email } });
-  });
-
 // Když se React dostane do produkce (build), obsloužíme statické soubory
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
