@@ -22,10 +22,9 @@ app.get("/api/data", (req, res) => {
   });
   
 
-// API endpoint
-app.get('/api/datas', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/dark_souls_weapons.json'));
-});
+// app.get('/api/datas', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public/dark_souls_weapons.json'));
+// });
 
 // Když se React dostane do produkce (build), obsloužíme statické soubory
 if (process.env.NODE_ENV === 'production') {
